@@ -5,7 +5,6 @@ module.exports=router;
 
 
 router.post('/post', async (req,res) =>{
-    // res.send('POST API');
     const data = new Model({
         name:req.body.name,
         age:req.body.age

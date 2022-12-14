@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 require('dotenv').config();
+const cors = require('cors');
 const port = 3000;
 const app = express();
 const mongostr=process.env.DB_URL;
@@ -19,7 +20,9 @@ db.on('error',(error) =>{
 db.once('connected',() =>{
     console.log("DB Connected");
 });
-
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use(cors());
 
 app.use('/api',routes);
 
