@@ -10,4 +10,4 @@ const dataschem = new mongoose.Schema({
     }
 });
 
-module.exports=mongoose.model('Data',dataschem);
+module.exports=mongoose.model('datas2',dataschem);
